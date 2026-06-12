@@ -46,13 +46,28 @@ public class SemanticAnalyzer implements ASTVisitor<Void> {
     }
 
     public Void visitVariableDeclaration(VariableDeclarationNode node) {
-        if (currentScope.resolve(node.getName()) != null && currentScope.resolve(node.getName()).getType().equals("variable")) {
-            throw SemanticException.duplicateVariable(node.getName(), node.getLine(), node.getColumn());
-        }
-        node.getInitializer().accept(this);
-        currentScope.define(new Symbol(node.getName(), "variable", node.getLine()));
-        return null;
+    Symbol existing = currentScope.resolveLocal(node.getName());
+
+    if (existing != null &&
+        existing.getType().equals("variable")) {
+        throw SemanticException.duplicateVariable(
+            node.getName(),
+            node.getLine(),
+            node.getColumn()
+        );
     }
+
+    node.getInitializer().accept(this);
+    currentScope.define(
+        new Symbol(
+            node.getName(),
+            "variable",
+            node.getLine()
+        )
+    );
+
+    return null;
+}
 
     public Void visitAssignment(AssignmentNode node) {
         Symbol symbol = currentScope.resolve(node.getName());

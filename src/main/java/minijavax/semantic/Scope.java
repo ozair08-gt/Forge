@@ -19,6 +19,10 @@ public class Scope {
         return true;
     }
 
+    public Symbol resolveLocal(String name) {
+        return symbols.get(name);
+    }
+
     public Symbol resolve(String name) {
         if (symbols.containsKey(name)) return symbols.get(name);
         if (enclosing != null) return enclosing.resolve(name);
