@@ -1,0 +1,22 @@
+// MiniJavaX Example 1: Variables and Arithmetic
+int x = 5;
+int y = 10;
+int z = 0;
+
+z = x + y;
+print(z);
+
+z = x * y;
+print(z);
+
+z = y - x;
+print(z);
+
+z = y / x;
+print(z);
+
+z = x % 3;
+print(z);
+
+int result = (x + y) * 2 - 5;
+print(result);

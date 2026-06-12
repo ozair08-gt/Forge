@@ -1,0 +1,7 @@
+{
+  "name": "minijavax-placeholder",
+  "private": true,
+  "scripts": {
+    "build": "echo 'This is a Java/Maven project. Use: mvn clean package'"
+  }
+}

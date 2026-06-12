@@ -1,0 +1,46 @@
+// MiniJavaX Example 4: Nested Scopes
+int x = 10;
+print(x);
+
+{
+    int x = 20;
+    print(x);
+
+    int y = 30;
+    print(y);
+
+    {
+        int x = 40;
+        print(x);
+        print(y);
+    }
+
+    print(x);
+}
+
+print(x);
+
+int compute(int x) {
+    return x * 2;
+}
+
+print(compute(5));
+print(x);
+
+int nested(int a) {
+    int result = a;
+    {
+        int a = 100;
+        result = a;
+    }
+    return result;
+}
+
+print(nested(50));
+
+int i = 0;
+while (i < 3) {
+    int loopVar = i * 10;
+    print(loopVar);
+    i = i + 1;
+}
