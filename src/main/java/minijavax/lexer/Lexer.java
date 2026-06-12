@@ -55,7 +55,15 @@ public class Lexer {
             case '+': addToken(TokenType.PLUS); break;
             case '-': addToken(TokenType.MINUS); break;
             case '*': addToken(TokenType.STAR); break;
-            case '/': addToken(TokenType.SLASH); break;
+            case '/':
+                if (match('/')) {
+                    while (peek() != '\n' && !isAtEnd()) {
+                        advance();
+                    }
+                } else {
+                    addToken(TokenType.SLASH);
+                }
+                break;
             case '%': addToken(TokenType.PERCENT); break;
             case '=':
                 if (match('=')) addToken(TokenType.EQUAL_EQUAL);

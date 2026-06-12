@@ -48,6 +48,7 @@ public class Parser {
             } while (match(TokenType.COMMA));
         }
         consume(TokenType.RIGHT_PAREN, "Expected ')' after parameters");
+        consume(TokenType.LEFT_BRACE, "Expected '{' before function body");
         ASTNode body = block();
         return new FunctionDeclarationNode(name.getLexeme(), parameters, body, name.getLine(), name.getColumn());
     }
