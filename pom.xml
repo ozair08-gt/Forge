@@ -5,14 +5,14 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.minijavax</groupId>
-    <artifactId>minijavax</artifactId>
+    <groupId>com.forge</groupId>
+    <artifactId>forge</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>MiniJavaX</name>
+    <name>Forge</name>
     <description>
-        A Java-like language engine demonstrating compiler and interpreter fundamentals.
+        A compiler and interpreter for a Java-like language built from scratch in Java.
     </description>
 
     <properties>

@@ -42,7 +42,7 @@ public class Main {
         }
 
         System.out.println("════════════════════════════════════════════════════════════════");
-        System.out.println("MiniJavaX Language Engine v1.0.0");
+        System.out.println("Forge Compiler & Interpreter v1.0.0");
         System.out.println("════════════════════════════════════════════════════════════════");
         System.out.println();
         System.out.println("Source: " + filename);
@@ -132,9 +132,9 @@ public class Main {
     }
 
     private static void printUsage() {
-        System.out.println("MiniJavaX - A Java-like language engine");
+        System.out.println("Forge - A Java-like language engine");
         System.out.println();
-        System.out.println("Usage: minijavax <source-file.mjx> [options]");
+        System.out.println("Usage: forge <source-file.mjx> [options]");
         System.out.println();
         System.out.println("Options:");
         System.out.println("  --trace    Enable detailed execution tracing");

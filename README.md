@@ -1,6 +1,6 @@
-# MiniJavaX
+# Forge
 
-MiniJavaX is a Java-like language engine built from scratch in Java that implements the major phases of a compiler and interpreter pipeline. The project supports lexical analysis, recursive descent parsing, semantic analysis, Abstract Syntax Tree (AST) construction, and execution through an AST-based interpreter.
+Forge is a Java-like language engine built from scratch in Java that implements the major phases of a compiler and interpreter pipeline. The project supports lexical analysis, recursive descent parsing, semantic analysis, Abstract Syntax Tree (AST) construction, and execution through an AST-based interpreter.
 
 ## Features
 
@@ -100,9 +100,9 @@ During development and testing:
 ```bash
 mvn clean package
 
-java -jar target/minijavax-1.0.0.jar examples/example1.mjx
+java -jar target/forge-1.0.0.jar examples/example1.mjx
 
-java -jar target/minijavax-1.0.0.jar examples/example3.mjx --trace
+java -jar target/forge-1.0.0.jar examples/example3.mjx --trace
 
-java -jar target/minijavax-1.0.0.jar examples/example1.mjx --tokens
+java -jar target/forge-1.0.0.jar examples/example1.mjx --tokens
 ```
