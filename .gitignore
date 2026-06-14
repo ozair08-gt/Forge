@@ -1,2 +1,21 @@
-node_modules
+# Maven
+target/
+
+# Java
+*.class
+
+# Environment files
 .env
+
+# Node
+node_modules/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+
+# Windows
+desktop.ini

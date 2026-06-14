@@ -1,120 +1,108 @@
-# MiniJavaX - Java-like Language Engine
+# MiniJavaX
 
-A complete compiler/interpreter implementation demonstrating core compiler fundamentals.
+MiniJavaX is a Java-like language engine built from scratch in Java that implements the major phases of a compiler and interpreter pipeline. The project supports lexical analysis, recursive descent parsing, semantic analysis, Abstract Syntax Tree (AST) construction, and execution through an AST-based interpreter.
 
-## Quick Start
+## Features
+
+- Lexical analysis and token generation
+- Recursive descent parser
+- Abstract Syntax Tree (AST) construction
+- Semantic analysis using scoped symbol tables
+- Variable declarations and assignments
+- Arithmetic and comparison operators
+- Conditional statements (if / else)
+- While loops
+- Functions with parameters and return values
+- Recursive function calls
+- Nested scopes and variable shadowing
+- Execution trace mode for debugging and visualization
+
+## Architecture
+
+```text
+Source Code
+    ↓
+Lexer
+    ↓
+Token Stream
+    ↓
+Parser
+    ↓
+Abstract Syntax Tree (AST)
+    ↓
+Semantic Analyzer
+    ↓
+Interpreter
+    ↓
+Program Output
+```
+
+## Tech Stack
+
+- Java
+- Maven
+- Object-Oriented Design
+- Visitor Pattern
+- Recursive Descent Parsing
+
+## Supported Language Constructs
+
+```java
+int x = 10;
+
+int factorial(int n) {
+    if (n <= 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+print(factorial(5));
+```
+
+## Screenshots
+
+### Lexical Analysis
+
+![Lexical Analysis](screenshots/lexical_analysis.png)
+
+### Execution Trace
+
+![Trace Mode](screenshots/trace_mode.png)
+
+### Compiler Pipeline
+
+![Compiler Pipeline](screenshots/compiler_pipeline.png)
+
+## Example Programs
+
+The repository includes sample programs demonstrating:
+
+- Arithmetic expressions
+- Variable assignments
+- Control flow statements
+- Function definitions
+- Recursive algorithms
+- Nested scopes and shadowing
+- Fibonacci and factorial computation
+
+## Challenges Solved
+
+During development and testing:
+
+- Added support for single-line comments in the lexer
+- Fixed function body parsing in the recursive descent parser
+- Corrected scope resolution to allow variable shadowing in nested blocks
+- Validated recursion support using factorial and fibonacci implementations
+
+## Build and Run
 
 ```bash
-# Build
 mvn clean package
 
-# Run examples
 java -jar target/minijavax-1.0.0.jar examples/example1.mjx
+
 java -jar target/minijavax-1.0.0.jar examples/example3.mjx --trace
+
+java -jar target/minijavax-1.0.0.jar examples/example1.mjx --tokens
 ```
-
-## Project Structure
-
-```
-src/main/java/minijavax/
-├── Main.java              # CLI entry point
-├── lexer/
-│   └── Lexer.java         # Lexical analysis (tokenization)
-├── parser/
-│   └── Parser.java        # Recursive descent parser
-├── ast/                   # Abstract Syntax Tree (19 nodes)
-│   ├── ASTNode.java       # Node interface
-│   ├── ASTVisitor.java    # Visitor pattern
-│   ├── ProgramNode.java
-│   ├── BinaryExpressionNode.java
-│   ├── FunctionDeclarationNode.java
-│   └── ... (15 more nodes)
-├── semantic/
-│   ├── SemanticAnalyzer.java  # Semantic validation
-│   ├── Symbol.java        # Symbol table entry
-│   ├── Scope.java         # Scope management
-│   └── FunctionSymbol.java
-├── interpreter/
-│   ├── Interpreter.java   # AST-walking interpreter
-│   └── ReturnValue.java   # Return control flow
-├── token/
-│   ├── TokenType.java     # Token type enum
-│   └── Token.java         # Token class
-└── exceptions/            # Error handling (5 exceptions)
-```
-
-## Language Features
-
-- Variables: `int x = 5;`
-- Arithmetic: `+ - * / %`
-- Comparisons: `== != < <= > >=`
-- Control flow: `if/else`, `while`
-- Functions with recursion
-- Nested scopes with shadowing
-
-## CLI Options
-
-```
---trace    Enable detailed execution tracing
---tokens   Print the token stream
---ast      Print the AST structure
---help     Show help
-```
-
-## Example Output (expected)
-
-```
-════════════════════════════════════════════════════════════════
-MiniJavaX Language Engine v1.0.0
-════════════════════════════════════════════════════════════════
-
-Source: examples/example3.mjx
-Size: 450 characters
-
-────────────────────────────────────────────────────────────────
-PHASE 1: LEXICAL ANALYSIS
-────────────────────────────────────────────────────────────────
-[Lexer] Generated 86 tokens
-
-────────────────────────────────────────────────────────────────
-PHASE 2: SYNTAX ANALYSIS (PARSING)
-────────────────────────────────────────────────────────────────
-[Parser] AST constructed successfully
-[Parser] Top-level statements: 11
-
-────────────────────────────────────────────────────────────────
-PHASE 3: SEMANTIC ANALYSIS
-────────────────────────────────────────────────────────────────
-[Semantic] No semantic errors found
-
-────────────────────────────────────────────────────────────────
-PHASE 4: EXECUTION
-────────────────────────────────────────────────────────────────
-42
-8
-300
-25
-49
-25
-5
-10
-120
-55
-
-════════════════════════════════════════════════════════════════
-Execution completed successfully
-════════════════════════════════════════════════════════════════
-```
-
-## Compiler Concepts Demonstrated
-
-1. **Lexical Analysis**: Tokenization, keyword recognition, position tracking
-2. **Recursive Descent Parsing**: Operator precedence, grammar rules
-3. **AST Design**: 19 node types, visitor pattern
-4. **Semantic Analysis**: Symbol tables, scope management, validation
-5. **Interpretation**: Tree-walking, scope stacks, function calls
-
-## Build Requirements
-
-- Java 11+
-- Maven 3.6+
