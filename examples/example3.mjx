@@ -1,4 +1,4 @@
-// MiniJavaX Example 3: Functions and Recursion
+// Forge Example 3: Functions and Recursion
 int getAnswer() {
     return 42;
 }

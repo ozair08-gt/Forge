@@ -1,4 +1,4 @@
-// MiniJavaX Example 2: Control Flow
+// Forge Example 2: Control Flow
 int x = 10;
 
 if (x > 5) {

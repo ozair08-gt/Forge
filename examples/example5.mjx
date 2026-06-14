@@ -1,4 +1,4 @@
-// MiniJavaX Example 5: Complete Programs
+// Forge Example 5: Complete Programs
 int min(int a, int b) {
     if (a < b) {
         return a;

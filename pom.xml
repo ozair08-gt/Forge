@@ -39,7 +39,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>minijavax.Main</mainClass>
+                            <mainClass>forge.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

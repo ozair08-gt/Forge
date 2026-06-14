@@ -1,4 +1,4 @@
-// MiniJavaX Example 4: Nested Scopes
+// Forge Example 4: Nested Scopes
 int x = 10;
 print(x);
 
